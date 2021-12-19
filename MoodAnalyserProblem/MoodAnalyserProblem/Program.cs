@@ -8,10 +8,12 @@ namespace MoodAnalyserProblem
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to MoodAnalyser Program");
-            Console.ReadKey();
+            Console.WriteLine("Hello World");
+            Console.ReadLine();
         }
     }
 }
+
+  
