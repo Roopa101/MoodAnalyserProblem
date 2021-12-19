@@ -9,14 +9,24 @@ namespace MoodAnalyserProblem
     public class MoodAnalyser
     {
 
-        private string message;
-        public string AnalyzeMood(String message)
+        public string message;
+        public MoodAnalyser(string message)
         {
-            if (message.Contains("Sad"))
-                    return "Sad";
+            this.message = message;
+        }
+        public string AnalyseMood()
+        {
+            try
+            {
+                if (message.ToLower().Contains(""))
+                    return "HAPPY";
                 else
-                    return "Happy";
-            
+                    return "SAD";
+            }
+            catch (NullReferenceException message)
+            {
+                return "Happy";
+            }
         }
     }
 }
