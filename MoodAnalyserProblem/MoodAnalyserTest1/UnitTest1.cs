@@ -8,16 +8,50 @@ namespace MoodAnalyserTest1
     public class UnitTest1
     {
         [TestMethod]
-        public void msgSadMood()
+        public void NullMood()
         {
             string msg = " ";
             string expected = "HAPPY";
 
-            MoodAnalyser obj = new MoodAnalyser(msg);
+            MoodAnalyser mood = new MoodAnalyser(msg);
 
-            string actual = obj.AnalyseMood();
+            string actual = mood.AnalyseMood();
 
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void getCustomNullException()
+        {
+            string expected = "message should not be null";
+            MoodAnalyser modeAnalyzer = new MoodAnalyser(" ");
+
+            try
+            {
+                string actual = modeAnalyzer.AnalyseMood();
+
+            }
+            catch (CustomException ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void getCustomEmptyException()
+        {
+            string expected = "message should not be empty";
+            MoodAnalyser modeAnalyzer = new MoodAnalyser(string.Empty);
+
+            try
+            {
+                string actual = modeAnalyzer.AnalyseMood1();
+
+            }
+            catch (CustomException ex)
+            {
+                Assert.AreEqual(expected, ex.Message);
+            }
 
         }
     }
