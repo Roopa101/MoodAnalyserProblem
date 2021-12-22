@@ -8,46 +8,15 @@ namespace MoodAnalyserProblem
 {
     public class MoodAnalyser
     {
-
-
         public string message;
-        public MoodAnalyser(string message)
+        public string AnalyseMood(string message)
         {
-            this.message = message;
+            if (message.ToLower().Contains("sad"))
+                return "SAD";
+
+            else
+                return "HAPPY";
         }
 
-        public string AnalyseMood()
-        {
-            try
-            {
-                if (message.ToLower().Contains(""))
-                    return "HAPPY";
-
-                else
-                    return "SAD";
-            }
-            catch (NullReferenceException ex)
-            {
-                throw new CustomException(CustomException.ExceptionType.Null_Type_Exception, "Message should not be null");
-            }
-        }
-
-        public string AnalyseMood1()
-        {
-            try
-            {
-                if (message.ToLower().Contains(string.Empty))
-                {
-                    return "happy";
-                }
-                else
-                    return "sad";
-            }
-            catch (NullReferenceException ex)
-            {
-                throw new CustomException(CustomException.ExceptionType.Empty_Type_Exception, "Message should not be empty");
-            }
-        }
     }
 }
-   
